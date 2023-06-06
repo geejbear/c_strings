@@ -55,14 +55,15 @@ void pystr_append(struct pystr *self, char ch) {
     
     //update length
     self->length = strlen(self->data);
-    /*
+    /*****************************************
         ***other method without a loop***
         
         temp = self->data[self->length];
         self->data[self->length] = ch;
         self->length = strlen(self->data);
         self->data[self->length] = temp;
-    */
+        
+    ******************************************/
 }
 
 void pystr_appends(struct pystr *self, char *str) {
@@ -90,9 +91,6 @@ int main(void) {
 
     pystr_appends(string, "lo world!!! What makes the world beautiful?"); //TODO: fix null finalizer. Its eating up letters
     pystr_dump(string);
-    
-    //pystr_appends(string, "ello, world!");
-    //pystr_dump(string);
     
     return 0;
 }
